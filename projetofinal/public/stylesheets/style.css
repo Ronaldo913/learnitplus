@@ -1,0 +1,104 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://i.pinimg.com/originals/29/f5/69/29f5699389ac551dfd0705261485e616.gif");
+  background-size: 90%;
+}
+
+#container {
+  width: 100%;
+  height: 100%;
+}
+
+header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  border-radius: 15px;
+  box-shadow: 1px 2px 2px rgba(11, 18, 25, 0.5);
+  padding: 15px 105px 15px 105px;
+  margin: 15px 15px 15px 10px;
+  background-color: #004C50;
+}
+
+.list {
+  width: 100%;
+  height: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link {
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.link a{
+  padding: 5px 15px;
+  color: white;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0.03em;
+  text-align: left;
+  text-transform: uppercase;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  border: none;
+}
+
+main{
+  width: 100%;
+  display: flex;
+  align-items: space-between;
+  justify-content: center;
+  height: 100%;
+}
+
+main span {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main span span {
+  flex-direction: column;
+}
+
+  
+
+.colaboradores {
+    cursor: pointer;
+}
+
+#intels {
+    display: flex;
+    flex-direction: row;
+}
+
+#intels a {
+    margin: 10px;
+}
+
+#intels a img {
+    border-radius: 50px;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weigth: bold;
+}

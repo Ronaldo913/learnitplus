@@ -1,0 +1,46 @@
+doctype html
+html(lang='pt-br')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Postagens
+    link(rel='stylesheet', href='/stylesheets/visualizarPacotes.css')
+  body
+    #fade.hide
+    #modal.hide
+      .modal-header
+        h2(style='color: black;') Atualizar Usuário
+        button#close-modal(style='color: black; background-color: transparent') X
+      .modal-body
+        div
+        p=msg
+        form#form(action='/users/update/' method='POST')
+          input.inputs(name="password" type='text' value='' placeholder='Insira a senha do usuário')
+          input#inputB(type='submit' value='cadastrar')
+    #container
+      header.menu
+        nav.content
+          ul.list
+            li.link
+              a(href='/') Home
+            li.link
+              a(href='/opcoes') Funções
+            li.link
+              a(href='/visualizar') Outra coisa
+            li.link
+              a(href='/json') JSON
+      
+      main
+        each package in users
+          div
+            div
+            p=package.titulo
+            div
+              img(src=package.imagem )
+            div
+              p=package.desconto
+              p=package.precoAtual
+              p=package.precoAntigo
+
+    script(src='/javascripts/script.js')

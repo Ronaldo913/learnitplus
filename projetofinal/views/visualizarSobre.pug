@@ -1,0 +1,45 @@
+doctype html
+html(lang='pt-br')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Learnit
+    link(rel='stylesheet', href='/stylesheets/visualizarPostagens.css')
+  body
+    #fade.hide
+    #modal.hide
+      .modal-header
+        h2(style='color: black;') Atualizar sobre
+        button#close-modal(style='color: black; background-color: transparent') X
+      .modal-body
+        div
+        p=msg
+        form#form(action='/users/update/' method='POST')
+          input.inputs(name="photo" type='text' value='' placeholder='Insira a url da foto')
+          input#inputB(type='submit' value='cadastrar')
+    #container
+      header.menu
+        nav.content
+          ul.list
+            li.link
+              a(href='/') Home
+            li.link
+              a(href='/opcoes') Funções
+            li.link
+              a(href='/visualizar') Outra coisa
+            li.link
+              a(href='/json') JSON
+      main
+        each about in abouts
+          #div
+            div
+              p=about.title
+            div
+              img(src=about.image width=200)
+            div
+              p=about.text
+            button#open-modal atualizar
+            a(href=about.url+'/delete')
+              button deletar
+    script(src='/javascripts/script.js')

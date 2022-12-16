@@ -1,0 +1,36 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width')
+    title Publications
+    link(rel='stylesheet', href='/stylesheets/styleC.css')
+  body
+    #container
+      header.menu
+        nav.content
+          ul.list
+            li.link
+              a(href='/') Home
+            li.link
+              a(href='/opcoes') Funções
+            li.link
+              a(href='/visualizar') Outra coisa
+            li.link
+              a(href='/json') JSON
+    h1#h1 Seja Bem-Vindo a tela do JSON!!!
+
+    img(
+src="https://i.pinimg.com/originals/29/f5/69/29f5699389ac551dfd0705261485e616.gif" width=300)
+    #buttons
+      a(href='/publications')
+        button JSON de Postagens
+      a(href='/abouts')
+        button JSON de Sobre
+      a(href='/packages')
+        button JSON de Pacotes
+      a(href='/users')
+        button JSON de Usuários
+      
+
+    script(src='/javascripts/script.js')
