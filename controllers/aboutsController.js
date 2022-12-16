@@ -41,21 +41,23 @@ exports.create = (req, res) => {
 
 exports.update = async (req, res) => {
   if (req.method == "POST") {
-    const filter = { _id: new ObjectId(req.body.id) };
-    console.log(filter);
+    const filter = { _id: new ObjectId(req.params.aboutId) };
+    //console.log(filter);
     const update = {
       image: req.body.image
     };
-    console.log(update);
+    //console.log(update);
     await About.findOneAndUpdate(filter, update).then(function(err, result) {
-      console.log(req.body.password);
-      msg = "Card Sobre atualizada com sucesso!";
+      console.log(err);
+      console.log(req.body.image);
+      msg = "Postagem atualizada com sucesso!";
+      console.log(msg);
       // res => response => resposta 
       res.msg = msg;
       exports.list(req, res);
     });
   } else {
-    await About.findOne({ _id: new ObjectId(req.params.userId) }).then(function(result) {
+    await About.findOne({ _id: new ObjectId(req.params.aboutId) }).then(function(result) {
       //console.log(result);
       res.render(`about/update`, { doc: result });
     })
