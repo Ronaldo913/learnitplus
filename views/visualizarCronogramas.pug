@@ -1,0 +1,33 @@
+doctype html
+html(lang='pt-br')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Cronogramas
+    link(rel='stylesheet', href='/stylesheets/visualizarCronogramas.css')
+  body
+    #container
+      header.menu
+        nav.content
+          ul.list
+            li.link
+              a(href='/') Home
+            li.link
+              a(href='/opcoes') Funções
+            li.link
+              a(href='/visualizar') Outra coisa
+            li.link
+              a(href='/json') JSON
+
+      main
+        each timeline in timelines
+          #div
+            p=timeline.title
+            p=timeline.hour
+            p=timeline.minute
+            p=timeline.day
+            p=timeline.color
+            a(href=timeline.url+'/delete')
+                button deletar
+    script(src='/javascripts/script2.js')

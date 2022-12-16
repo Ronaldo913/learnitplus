@@ -1,0 +1,33 @@
+doctype html
+html(lang='pt-br')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Questoes
+    link(rel='stylesheet', href='/stylesheets/visualizarQuestoes.css')
+  body
+    #container
+      header.menu
+        nav.content
+          ul.list
+            li.link
+              a(href='/') Home
+            li.link
+              a(href='/opcoes') Funções
+            li.link
+              a(href='/visualizar') Outra coisa
+            li.link
+              a(href='/json') JSON
+      main
+        each question in questions
+          #div
+            p=question.title
+            p='a) '+question.a
+            p='b) '+question.b
+            p='c) '+question.c
+            p='d) '+question.d
+            p='Cor: '+question.color
+            p='Resposta: '+question.answer
+            a(href=question.url+'/delete')
+              button deletar

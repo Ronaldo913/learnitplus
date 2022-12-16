@@ -58,8 +58,8 @@ exports.update = async (req, res) => {
       msg = "Postagem atualizada com sucesso!";
       console.log(msg);
       // res => response => resposta 
-      res.msg = msg;
-      exports.list(req, res);
+      
+      res.redirect('/visualizarPostagens');
     });
   } else {
     await Publication.findOne({ _id: new ObjectId(req.params.publicationId) }).then(function(result) {

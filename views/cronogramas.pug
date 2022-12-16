@@ -1,0 +1,44 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width')
+    title Cronograma
+    link(rel='stylesheet', href='/stylesheets/styleC.css')
+  body
+    #fade.hide
+    #modal.hide
+      .modal-header
+        h2(style='color: black;') Cadastrar Card Cronogramas
+        button#close-modal(style='color: black; background-color: transparent') X
+      .modal-body
+        div
+        p=msg
+        form#form(action='/timelines/create/' method='POST')
+          input.inputs(name="title" type='text' value='' placeholder='Insira o título do card')
+          input.inputs(name="hour" type='text' value='' placeholder='Insira a hora do card')
+          input.inputs(name="minute" type='text' value='' placeholder='Insira os minutos do card')
+          input.inputs(name="day" type='text' value='' placeholder='Insira o dia do card')
+          input.inputs(name="color" type='text' value='' placeholder='Insira a cor do card')
+          input#inputB(type='submit' value='cadastrar')
+    #container
+      header.menu
+        nav.content
+          ul.list
+            li.link
+              a(href='/') Home
+            li.link
+              a(href='/opcoes') Funções
+            li.link
+              a(href='/visualizar') Outra coisa
+            li.link
+              a(href='/json') JSON
+    h1#h1 Seja Bem-Vindo a tela de Cadastro dos cards de cronogramas!!!
+    img(src="https://i.pinimg.com/originals/29/f5/69/29f5699389ac551dfd0705261485e616.gif" width=300)
+
+    #buttons
+      button#open-modal(style='color: white;') Cadastrar Cronogramas
+      a(href='/visualizarCronogramas')
+        button#open-modal(style='color: white;') Visualizar Cronogramas
+
+    script(src='/javascripts/script.js')

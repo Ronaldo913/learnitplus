@@ -8,7 +8,7 @@ exports.list = async (req, res) => {
 }
 
 exports.listarTimelines = async (req, res) => {
-  await User.find({}).exec(function(err, docs) {
+  await Timeline.find({}).exec(function(err, docs) {
     res.render('visualizarCronogramas', { timelines: docs, msg: res.msg });
   });
 }
@@ -24,8 +24,9 @@ exports.create = (req, res) => {
       hour: req.body.hour,
       minute: req.body.minute,
       day: req.body.day,
+      color: req.body.color,
     });
-    timelineDocument
+    TimelineDocument
       .save()
       .then(result => {
         res.redirect("/cronogramas");
@@ -35,7 +36,7 @@ exports.create = (req, res) => {
         res.status(500).json({ error: err });
       });
   } else {
-    res.redirect('/cronograma');
+    res.redirect('/cronogramas');
   }
 
 }

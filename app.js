@@ -37,7 +37,14 @@ var visualizarPacotesRouter = require('./routes/pacotes/visualizarPacotes');
 var usersRouter = require('./routes/usuarios/users');
 var usuariosRouter = require('./routes/usuarios/usuarios');
 var visualizarUsuariosRouter = require('./routes/usuarios/visualizarUsuarios');
-
+//questoes
+var questionsRouter = require('./routes/questoes/questions');
+var questoesRouter = require('./routes/questoes/questoes');
+var visualizarQuestoesRouter = require('./routes/questoes/visualizarQuestoes');
+//cronogramas
+var timelinesRouter = require('./routes/cronograma/timelines');
+var cronogramasRouter = require('./routes/cronograma/cronogramas');
+var visualizarCronogramasRouter = require('./routes/cronograma/visualizarCronogramas');
 
 var app = express();
 
@@ -70,6 +77,15 @@ app.use('/visualizarPacotes', visualizarPacotesRouter);
 app.use('/visualizarSobre', visualizarSobreRouter);
 app.use('/sobre', sobreRouter);
 app.use('/abouts', aboutsRouter);
+//questoes
+app.use('/visualizarQuestoes', visualizarQuestoesRouter);
+app.use('/questoes', questoesRouter);
+app.use('/questions', questionsRouter);
+//cronogramas
+app.use('/cronogramas', cronogramasRouter);
+app.use('/timelines', timelinesRouter);
+app.use('/visualizarCronogramas', visualizarCronogramasRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
